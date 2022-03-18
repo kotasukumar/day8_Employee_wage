@@ -8,22 +8,26 @@ public class Main {
             int WORKING_HOURS = 0;
             final int IS_FULL_TIME_EMP = 1;
             final int IS_PART_TIME_EMP = 2;
-            int random = (int) Math.floor(Math.random() * 10) % 3;
-            switch (random) {
+            int monthly_hours = 0;
+            for (int i = 1; i <= 20; i++) {
+                int random = (int) Math.floor(Math.random() * 10) % 3;
+                switch (random) {
 
-                case IS_FULL_TIME_EMP:
-                    WORKING_HOURS = 8;
-                    System.out.println("Full time employee is present");
-                    break;
-                case IS_PART_TIME_EMP:
-                    WORKING_HOURS = 8;
-                    System.out.println("Part time employee is present");
-                    break;
-                default:
-                    WORKING_HOURS = 0;
-                    System.out.println("Employee is absent");
+                    case IS_FULL_TIME_EMP:
+                        WORKING_HOURS = 8;
+                        System.out.println("Full time employee is present");
+                        break;
+                    case IS_PART_TIME_EMP:
+                        WORKING_HOURS = 8;
+                        System.out.println("Part time employee is present");
+                        break;
+                    default:
+                        WORKING_HOURS = 0;
+                        System.out.println("Employee is absent");
+                }
+                monthly_hours = monthly_hours + WORKING_HOURS;
             }
-            int daily_wage = PER_HOUR_WAGE * WORKING_HOURS;
-            System.out.println("today wage is : " + daily_wage);
+            int monthly_wage = PER_HOUR_WAGE * monthly_hours;
+            System.out.println("today wage is : " + monthly_wage);
     }
 }
